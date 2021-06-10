@@ -6,6 +6,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const fileupload = require("express-fileupload");
 
 // routes
 const authRoutes = require("./routes/auth");
@@ -25,13 +26,14 @@ mongoose
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
+//fileupload as middleware
+app.use(fileupload());
 
 // Routes
 app.use("/api", authRoutes);
 
-
 //PORT
-const port = process.env.PORT || 8008;
+const port = process.env.PORT || 8001;
 
 //Starting a server
 app.listen(port, () => {

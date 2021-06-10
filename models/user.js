@@ -21,6 +21,12 @@ var userSchema = new mongoose.Schema(
       required: true,
       unique: true
     },
+    // file: {
+    //   type: String,
+    //   trim: true,
+    //   required: true,
+    //   unique: true
+    // },
     encry_password: {
       type: String
       
